@@ -11,6 +11,7 @@ import {
 import Logo from "../assets/LogoDEPA-01.png";
 import DepaMark from "../components/DepaMark";
 import ThemeToggle from "../components/ThemeToggle";
+import { appUrl, isGitHubPagesDemo, saveDemoUser } from "../utils/demoAuth";
 
 // ข้อความที่แสดงในหน้าเข้าสู่ระบบ แยกตามภาษาที่เลือก
 const copy = {
@@ -53,6 +54,10 @@ function Login() {
 
   // ถ้าผู้เรียนเปิดลิงก์ QR แล้วต้องล็อกอิน ให้ส่งรหัสคอร์สไปพร้อมคำขอ ThaID
   function startThaiIdLogin() {
+    if (isGitHubPagesDemo) {
+      setLoginError("หน้าเว็บทดลองยังไม่ได้เชื่อมต่อ backend สำหรับเข้าสู่ระบบ ThaID");
+      return;
+    }
     const query = requestedCourseCode
       ? `?code=${encodeURIComponent(requestedCourseCode)}`
       : "";
@@ -61,6 +66,11 @@ function Login() {
 
   // ตรวจสอบจาก backend ว่าควรแสดงปุ่มเข้าสู่ระบบทดลองหรือไม่
   useEffect(() => {
+    if (isGitHubPagesDemo) {
+      setMockEnabled(true);
+      return;
+    }
+
     fetch("/api/auth/mode")
       .then((response) => response.json())
       .then((data) => setMockEnabled(data.mockEnabled))
@@ -70,6 +80,19 @@ function Login() {
   // เริ่มเข้าสู่ระบบด้วยบัญชีจำลองสำหรับทดสอบหน้าผู้เรียน/ผู้ดูแล
   async function startMockLogin(endpoint, destination, errorMessage) {
     setLoginError("");
+
+    if (isGitHubPagesDemo) {
+      const isAdmin = endpoint.endsWith("mock-admin");
+      saveDemoUser({
+        subject: isAdmin ? "github-pages-mock-admin" : "github-pages-mock-learner",
+        name: isAdmin ? "ผู้จัดคอร์สตัวอย่าง" : "ผู้เรียนตัวอย่าง",
+        role: isAdmin ? "admin" : "learner",
+        demo: true,
+      });
+      window.location.assign(appUrl(destination));
+      return;
+    }
+
     try {
       const response = await fetch(endpoint, { method: "POST" });
       if (!response.ok) throw new Error(errorMessage);
