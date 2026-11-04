@@ -18,7 +18,3 @@ export function saveDemoUser(user) {
 export function clearDemoUser() {
   window.localStorage.removeItem(DEMO_USER_KEY);
 }
-
-export function appUrl(path = "") {
-  return `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, "")}`;
-}

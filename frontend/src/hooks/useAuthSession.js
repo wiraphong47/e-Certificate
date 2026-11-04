@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
-  appUrl,
   clearDemoUser,
   isGitHubPagesDemo,
   readDemoUser,
@@ -10,6 +10,7 @@ import {
 export default function useAuthSession() {
   const [user, setUser] = useState(null);
   const [checking, setChecking] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let active = true;
@@ -45,13 +46,13 @@ export default function useAuthSession() {
   const logout = useCallback(async () => {
     if (isGitHubPagesDemo) {
       clearDemoUser();
-      window.location.assign(appUrl());
+      navigate("/", { replace: true });
       return;
     }
 
     await fetch("/api/auth/logout", { method: "POST" });
-    window.location.assign("/");
-  }, []);
+    navigate("/", { replace: true });
+  }, [navigate]);
 
   return { user, checking, logout };
 }

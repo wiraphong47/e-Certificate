@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Alert,
   Box,
@@ -11,7 +12,7 @@ import {
 import Logo from "../assets/LogoDEPA-01.png";
 import DepaMark from "../components/DepaMark";
 import ThemeToggle from "../components/ThemeToggle";
-import { appUrl, isGitHubPagesDemo, saveDemoUser } from "../utils/demoAuth";
+import { isGitHubPagesDemo, saveDemoUser } from "../utils/demoAuth";
 
 // ข้อความที่แสดงในหน้าเข้าสู่ระบบ แยกตามภาษาที่เลือก
 const copy = {
@@ -47,6 +48,7 @@ function Login() {
   const [mockEnabled, setMockEnabled] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [language, setLanguage] = useState("TH");
+  const navigate = useNavigate();
   const t = copy[language];
   const requestedCourseCode = new URLSearchParams(window.location.search).get(
     "code",
@@ -89,7 +91,7 @@ function Login() {
         role: isAdmin ? "admin" : "learner",
         demo: true,
       });
-      window.location.assign(appUrl(destination));
+      navigate(destination);
       return;
     }
 
