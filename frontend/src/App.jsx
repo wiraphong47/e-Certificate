@@ -1,4 +1,10 @@
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
@@ -10,6 +16,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./theme";
 import useAuthSession from "./hooks/useAuthSession";
 import { ThemeModeContext } from "./contexts/ThemeModeContext";
+import.meta.env.BASE_URL;
 
 // ตรวจสอบ session ของผู้เรียนก่อนอนุญาตให้เปิดหน้ากรอกรหัสคอร์ส
 function AuthenticatedCourseCode() {
@@ -66,14 +73,14 @@ function App() {
   }, [mode]);
 
   function toggleTheme() {
-    setMode((currentMode) => currentMode === "dark" ? "light" : "dark");
+    setMode((currentMode) => (currentMode === "dark" ? "light" : "dark"));
   }
 
   return (
     <ThemeModeContext.Provider value={{ mode, toggleTheme }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/course-code" element={<AuthenticatedCourseCode />} />
@@ -81,7 +88,10 @@ function App() {
               path="/admin/courses"
               element={<AuthenticatedCourseManagement />}
             />
-            <Route path="/admin/dashboard" element={<AuthenticatedDashboard />} />
+            <Route
+              path="/admin/dashboard"
+              element={<AuthenticatedDashboard />}
+            />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>

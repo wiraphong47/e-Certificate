@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? "/e-Certificate/" : "/",
   plugins: [react()],
   server: {
     // เปิด dev server ให้เครื่องอื่นในเครือข่ายเดียวกันเข้าถึงได้
