@@ -1,0 +1,32 @@
+[
+  {
+    "id": "demo-course-001",
+    "title": "หลักสูตรตัวอย่าง: การพัฒนาเทคโนโลยีดิจิทัล",
+    "instructor": "ทีมงาน depa",
+    "startDate": "2026-11-03",
+    "endDate": null,
+    "code": "DEPA-DEMO-2026",
+    "templateUrl": null,
+    "createdAt": "2026-11-03T00:00:00.000Z"
+  },
+  {
+    "id": "35f4f730-954c-4a7b-a138-fd2fc248c244",
+    "title": "การสร้างAIวิธีง่ายๆ",
+    "instructor": "ดร.ฟีล์ม บรูณกิตติ",
+    "startDate": "2026-11-03",
+    "endDate": "2026-11-03",
+    "code": "DEPA-DBCY7S",
+    "templateUrl": "/api/certificate-templates/54ba5693-23f0-4ffb-b424-9da6d89e6dd2.jpg",
+    "createdAt": "2026-11-03T07:48:02.291Z"
+  },
+  {
+    "id": "c4224a57-af8f-4cf8-be86-71736c9a6632",
+    "title": "การสร้างวิดิโอโดยใช้AI",
+    "instructor": "ดร.กริช",
+    "startDate": "2026-11-03",
+    "endDate": "2026-11-03",
+    "code": "9695360",
+    "templateUrl": "/api/certificate-templates/05c6301e-5fa1-4635-8984-dbb3e2347016.png",
+    "createdAt": "2026-11-03T09:31:25.534Z"
+  }
+]

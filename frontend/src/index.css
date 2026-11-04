@@ -1,0 +1,300 @@
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #071B30;
+}
+
+/* Light-mode overrides for the app's custom surfaces and text. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="light"] body {
+  background: #F2F5F8;
+}
+
+:root[data-theme="light"] .MuiTypography-colorTextSecondary {
+  color: #31516F !important;
+}
+
+:root[data-theme="light"] .MuiButton-root.Mui-focusVisible,
+:root[data-theme="light"] .MuiLink-root:focus-visible {
+  outline-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .MuiAlert-standardError {
+  color: #7A1B1B !important;
+  background: #FFF2F0 !important;
+  border-color: #E7A6A0 !important;
+}
+
+:root[data-theme="light"] .MuiAlert-standardInfo {
+  color: #0C2F53 !important;
+  background: #EAF4FF !important;
+}
+
+:root[data-theme="light"] .MuiAlert-standardSuccess {
+  color: #1B5E20 !important;
+  background: #EAF6EC !important;
+}
+
+:root[data-theme="light"] .login-shell {
+  background: #F2F5F8 !important;
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .login-header,
+:root[data-theme="light"] .login-footer {
+  background: #F7F9FC !important;
+  color: #0C2F53 !important;
+  border-color: #D8E1EA !important;
+}
+
+:root[data-theme="light"] .login-header .theme-toggle,
+:root[data-theme="light"] .login-header .MuiButton-outlined,
+:root[data-theme="light"] .login-footer .MuiTypography-root,
+:root[data-theme="light"] .login-footer .MuiLink-root {
+  color: #0C2F53 !important;
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .login-hero {
+  background: #0C2F53 !important;
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .login-content {
+  background: #F7F9FC !important;
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .login-content .MuiTypography-root,
+:root[data-theme="light"] .login-content .MuiLink-root {
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .login-content .MuiButton:not(.MuiButton-contained) {
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .login-content .MuiDivider-root {
+  border-color: #D8E1EA !important;
+}
+
+:root[data-theme="light"] .login-content .MuiAlert-standardError {
+  color: #7A1B1B !important;
+  background: #FFF2F0 !important;
+}
+
+:root[data-theme="light"] .learner-navbar {
+  background: #F7F9FC !important;
+  color: #0C2F53 !important;
+  border-color: #D8E1EA !important;
+}
+
+:root[data-theme="light"] .learner-navbar .MuiTypography-root,
+:root[data-theme="light"] .learner-navbar .theme-toggle,
+:root[data-theme="light"] .learner-navbar .MuiButton-outlined {
+  color: #0C2F53 !important;
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .dashboard-shell,
+:root[data-theme="light"] .course-management-shell,
+:root[data-theme="light"] .course-code-shell {
+  background: #F2F5F8 !important;
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .dashboard-shell .MuiTypography-root,
+:root[data-theme="light"] .course-management-shell .MuiTypography-root,
+:root[data-theme="light"] .course-code-panel .MuiTypography-root {
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .dashboard-shell .MuiTypography-caption,
+:root[data-theme="light"] .course-management-shell .MuiTypography-caption,
+:root[data-theme="light"] .course-code-panel .MuiTypography-caption,
+:root[data-theme="light"] .course-code-panel .MuiTypography-body2 {
+  color: #31516F !important;
+}
+
+:root[data-theme="light"] .course-code-shell .MuiStepLabel-label {
+  color: #31516F !important;
+}
+
+:root[data-theme="light"] .course-code-shell .MuiStepLabel-label.Mui-active {
+  color: #0C2F53 !important;
+  font-weight: 800 !important;
+}
+
+:root[data-theme="light"] .course-code-shell .MuiStepLabel-label.Mui-completed {
+  color: #31516F !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiCard-root,
+:root[data-theme="light"] .course-code-panel {
+  background: #fff !important;
+  color: #0C2F53 !important;
+  border-color: #C6D2DE !important;
+  border-top-color: #0C2F53 !important;
+  box-shadow: 0 2px 12px rgba(12,47,83,.08) !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiInputLabel-root {
+  color: #31516F !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiSvgIcon-root {
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiInputBase-root,
+:root[data-theme="light"] .course-code-panel .MuiOutlinedInput-root {
+  background: #fff !important;
+  color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiOutlinedInput-notchedOutline,
+:root[data-theme="light"] .course-code-panel .MuiOutlinedInput-notchedOutline {
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .course-management-shell input::placeholder,
+:root[data-theme="light"] .course-code-panel input::placeholder {
+  color: #607A94 !important;
+}
+
+:root[data-theme="light"] .course-management-shell input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px #fff inset !important;
+  -webkit-text-fill-color: #0C2F53 !important;
+  caret-color: #0C2F53;
+}
+
+:root[data-theme="light"] .template-preview {
+  background: #E9EFF5 !important;
+  border-color: #7892AA !important;
+}
+
+:root[data-theme="light"] .upload-file-chip {
+  background: #0C2F53 !important;
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .course-code-panel .MuiOutlinedInput-root {
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .course-qr-panel {
+  background: #fff !important;
+  border-color: #AABACA !important;
+}
+
+:root[data-theme="light"] .dashboard-stat {
+  border-color: #C6D2DE !important;
+}
+
+:root[data-theme="light"] .dashboard-table-head {
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .dashboard-report-row {
+  border-color: #CCD7E1 !important;
+}
+
+:root[data-theme="light"] .dashboard-report-divider {
+  border-color: #B8C7D6 !important;
+}
+
+:root[data-theme="light"] .dashboard-bar-track {
+  background: #D7E0E9 !important;
+}
+
+:root[data-theme="light"] .admin-sidebar,
+:root[data-theme="light"] .admin-mobile-header {
+  background: #071B30 !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.16) !important;
+}
+
+:root[data-theme="light"] .admin-sidebar .MuiTypography-root,
+:root[data-theme="light"] .admin-sidebar .MuiButton-root,
+:root[data-theme="light"] .admin-mobile-header .MuiTypography-root,
+:root[data-theme="light"] .admin-mobile-header .MuiButton-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .admin-sidebar .theme-toggle,
+:root[data-theme="light"] .admin-mobile-header .theme-toggle {
+  color: #fff !important;
+  border-color: rgba(255,255,255,.5) !important;
+}
+
+:root[data-theme="light"] .admin-drawer .MuiDrawer-paper {
+  background: #0C2F53 !important;
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .admin-drawer .MuiTypography-root,
+:root[data-theme="light"] .admin-drawer .MuiButton-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .admin-drawer .MuiLink-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .dashboard-shell .admin-sidebar .MuiTypography-root,
+:root[data-theme="light"] .dashboard-shell .admin-sidebar .MuiButton-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .course-management-shell .admin-sidebar .MuiTypography-root,
+:root[data-theme="light"] .course-management-shell .admin-sidebar .MuiButton-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .dashboard-shell .admin-mobile-header .MuiTypography-root,
+:root[data-theme="light"] .dashboard-shell .admin-mobile-header .MuiButton-root,
+:root[data-theme="light"] .course-management-shell .admin-mobile-header .MuiTypography-root,
+:root[data-theme="light"] .course-management-shell .admin-mobile-header .MuiButton-root {
+  color: #fff !important;
+}
+
+:root[data-theme="light"] .course-management-shell .MuiButton-outlined,
+:root[data-theme="light"] .course-code-panel .MuiButton-outlined {
+  color: #0C2F53 !important;
+  border-color: #0C2F53 !important;
+}
+
+:root[data-theme="light"] .dashboard-shell [style*="rgba(255,255,255"] {
+  border-color: #D8E1EA !important;
+}
+
+:root[data-theme="light"] .dashboard-shell .MuiBox-root[style*="background-color: rgba(255, 255, 255"] {
+  background-color: #E4EAF0 !important;
+}
+
+:root[data-theme="light"] .course-code-panel .MuiAlert-standardInfo {
+  color: #0C2F53 !important;
+  background: #EAF4FF !important;
+}
+
+:root[data-theme="light"] .course-code-panel .MuiAlert-standardSuccess {
+  color: #1B5E20 !important;
+  background: #EAF6EC !important;
+}
+
+:root[data-theme="light"] .course-code-panel .MuiAlert-standardError {
+  color: #7A1B1B !important;
+  background: #FFF2F0 !important;
+}
